@@ -1796,8 +1796,13 @@ function defaults() {
 																				'icon'    => 'share',
 																			),
 																			'header_html'          => array(
-																				'name'    => esc_html__( 'HTML', 'responsive' ),
+																				'name'    => esc_html__( 'HTML 1', 'responsive' ),
 																				'section' => 'responsive_header_html',
+																				'icon'    => 'html',
+																			),
+																			'header_html2'          => array(
+																				'name'    => esc_html__( 'HTML 2', 'responsive' ),
+																				'section' => 'responsive_header_html2',
 																				'icon'    => 'html',
 																			),
 																			'header_button'        => array(
@@ -1849,7 +1854,12 @@ function defaults() {
 																				'icon'    => 'share',
 																			),
 																			'header_html'          => array(
-																				'name'    => esc_html__( 'HTML', 'responsive' ),
+																				'name'    => esc_html__( 'HTML 1', 'responsive' ),
+																				'section' => 'responsive_mobile_header_html',
+																				'icon'    => 'html',
+																			),
+																			'header_html2'          => array(
+																				'name'    => esc_html__( 'HTML 2', 'responsive' ),
 																				'section' => 'responsive_mobile_header_html',
 																				'icon'    => 'html',
 																			),
