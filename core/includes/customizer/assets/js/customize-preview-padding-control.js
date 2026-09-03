@@ -2389,6 +2389,30 @@ api( 'responsive_product_card_inside_container_mobile_bottom_padding', function(
         });
     });
 
+    // Header HTML 2
+    const headerHtml2Margin = [
+        'responsive_header_html2_margin_top_padding',
+        'responsive_header_html2_margin_right_padding',
+        'responsive_header_html2_margin_bottom_padding',
+        'responsive_header_html2_margin_left_padding',
+        'responsive_header_html2_margin_tablet_top_padding',
+        'responsive_header_html2_margin_tablet_right_padding',
+        'responsive_header_html2_margin_tablet_bottom_padding',
+        'responsive_header_html2_margin_tablet_left_padding',
+        'responsive_header_html2_margin_mobile_top_padding',
+        'responsive_header_html2_margin_mobile_right_padding',
+        'responsive_header_html2_margin_mobile_bottom_padding',
+        'responsive_header_html2_margin_mobile_left_padding',
+    ];
+
+    headerHtml2Margin.forEach(setting => {
+        api(setting, function(value) {
+            value.bind(function(newval) {
+                responsive_dynamic_margin('header_html2_margin', '.site-header .responsive-header-html2 .responsive-header-html2-inner');
+            });
+        });
+    });
+
     const mobileHeaderHtmlMargin = [
         'responsive_mobile_header_html_margin_top_padding',
         'responsive_mobile_header_html_margin_right_padding',
