@@ -1825,8 +1825,13 @@ function defaults() {
 																				'icon'    => 'button',
 																			),
 																			'header_widgets1'        => array(
-																				'name'    => esc_html__( 'Header Widgets', 'responsive' ),
+																				'name'    => esc_html__( 'Widget 1', 'responsive' ),
 																				'section' => 'responsive_header_widget',
+																				'icon'    => 'wordpress',
+																			),
+																			'header_widgets2'        => array(
+																				'name'    => esc_html__( 'Widget 2', 'responsive' ),
+																				'section' => 'responsive_header_widget2',
 																				'icon'    => 'wordpress',
 																			),
 																			'header_contact_info'  => array(
@@ -1874,7 +1879,7 @@ function defaults() {
 																			),
 																			'header_html2'          => array(
 																				'name'    => esc_html__( 'HTML 2', 'responsive' ),
-																				'section' => 'responsive_mobile_header_html',
+																				'section' => 'responsive_mobile_header_html2',
 																				'icon'    => 'html',
 																			),
 																			'header_button'        => array(
@@ -1883,8 +1888,13 @@ function defaults() {
 																				'icon'    => 'button',
 																			),
 																			'header_widgets1'        => array(
-																				'name'    => esc_html__( 'Header Widgets', 'responsive' ),
+																				'name'    => esc_html__( 'Widget 1', 'responsive' ),
 																				'section' => 'responsive_mobile_header_widget',
+																				'icon'    => 'wordpress',
+																			),
+																			'header_widgets2'        => array(
+																				'name'    => esc_html__( 'Widget 2', 'responsive' ),
+																				'section' => 'responsive_mobile_header_widget2',
 																				'icon'    => 'wordpress',
 																			),
 																			'header_contact_info'  => array(

@@ -2436,6 +2436,30 @@ api( 'responsive_product_card_inside_container_mobile_bottom_padding', function(
         });
     });
 
+    // Header HTML 2 mobile
+    const mobileHeaderHtml2Margin = [
+        'responsive_mobile_header_html2_margin_top_padding',
+        'responsive_mobile_header_html2_margin_right_padding',
+        'responsive_mobile_header_html2_margin_bottom_padding',
+        'responsive_mobile_header_html2_margin_left_padding',
+        'responsive_mobile_header_html2_margin_tablet_top_padding',
+        'responsive_mobile_header_html2_margin_tablet_right_padding',
+        'responsive_mobile_header_html2_margin_tablet_bottom_padding',
+        'responsive_mobile_header_html2_margin_tablet_left_padding',
+        'responsive_mobile_header_html2_margin_mobile_top_padding',
+        'responsive_mobile_header_html2_margin_mobile_right_padding',
+        'responsive_mobile_header_html2_margin_mobile_bottom_padding',
+        'responsive_mobile_header_html2_margin_mobile_left_padding',
+    ];
+
+    mobileHeaderHtml2Margin.forEach(setting => {
+        api(setting, function(value) {
+            value.bind(function(newval) {
+                responsive_dynamic_margin('mobile_header_html2_margin', '.site-header-mobile .responsive-mobile-header-html2 .responsive-mobile-header-html2-inner');
+            });
+        });
+    });
+
     /**
      * Generates the margin settings array for a specific widget number (1-6)
      * @param {number} widgetNum - The widget number (1 to 6)
