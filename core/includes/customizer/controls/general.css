@@ -2119,6 +2119,6 @@ ul.control-panel-nav_menus .customize-help-toggle:before {
 #sub-accordion-section-responsive_single_blog_layout{
 	height: 100%;
 }
-.responsive-hfb-builder-item[data-id="header_widgets2"] .responsive-hfb-builder-item-icon.rhfb-setting-icon {
+.responsive-hfb-builder-item[data-id="header_widgets2"] .rhfb-setting-icon {
     display: none !important;
 }

@@ -1545,6 +1545,42 @@ function responsive_customizer_styles() {
 			$custom_css .= "}";
 		}
 
+		// Mobile Header Widgets 2 (colors)
+		// Apply only under the mobile menu breakpoint to avoid affecting desktop header widgets.
+		$mobile_header_widget2_text_color        = esc_html( get_theme_mod( 'responsive_mobile_header_widget2_text_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_text' ) ) );
+		$mobile_header_widget2_background_color  = esc_html( get_theme_mod( 'responsive_mobile_header_widget2_background_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_background' ) ) );
+		$mobile_header_widget2_border_color      = esc_html( get_theme_mod( 'responsive_mobile_header_widget2_border_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_border' ) ) );
+		$mobile_header_widget2_link_color        = esc_html( get_theme_mod( 'responsive_mobile_header_widget2_link_color',  Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_link' ) ) );
+		$mobile_header_widget2_link_hover_color  = esc_html( get_theme_mod( 'responsive_mobile_header_widget2_link_hover_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_link_hover' ) ) );
+
+		if ( $mobile_header_widget2_text_color || $mobile_header_widget2_background_color || $mobile_header_widget2_border_color || $mobile_header_widget2_link_color || $mobile_header_widget2_link_hover_color ) {
+			$custom_css .= "@media (max-width:992px) {";
+				if ( $mobile_header_widget2_text_color ) {
+					$custom_css .= ".mobile-header-widgets2 .mobile-header-widgets-wrapper,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h1,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h2,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h3,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h4,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h5,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper h6,
+									.mobile-header-widgets2 .mobile-header-widgets-wrapper .widget-title h4 { color: {$mobile_header_widget2_text_color}; }";
+				}
+				if ( $mobile_header_widget2_background_color ) {
+					$custom_css .= ".mobile-header-widgets2 { background-color: {$mobile_header_widget2_background_color}; }";
+				}
+				if ( $mobile_header_widget2_border_color ) {
+					$custom_css .= ".mobile-header-widgets2 { border-color: {$mobile_header_widget2_border_color}; }";
+				}
+				if ( $mobile_header_widget2_link_color ) {
+					$custom_css .= ".mobile-header-widgets2 .mobile-header-widgets-wrapper a { color: {$mobile_header_widget2_link_color}; }";
+				}
+				if ( $mobile_header_widget2_link_hover_color ) {
+					$custom_css .= ".mobile-header-widgets2 .mobile-header-widgets-wrapper a:focus,
+		.mobile-header-widgets2 .mobile-header-widgets-wrapper a:hover { color: {$mobile_header_widget2_link_hover_color}; }";
+				}
+			$custom_css .= "}";
+		}
+
 		$footer_background_color = esc_html( get_theme_mod( 'responsive_footer_background_color', '#333333' ) );
 
 		if ( $footer_background_image ) {
@@ -2664,10 +2700,13 @@ function responsive_customizer_styles() {
 		$header_widget_link_color       = esc_html( get_theme_mod( 'responsive_header_widget_link_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget_link' ) ) );
 		$header_widget_link_hover_color = esc_html( get_theme_mod( 'responsive_header_widget_link_hover_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget_link_hover' ) ) );
 
-		// $header_bottom_border = 0;
-		// if ( 1 === get_theme_mod( 'responsive_enable_header_bottom_border', 1 ) ) {
-		// 	$header_bottom_border = esc_html( get_theme_mod( 'responsive_bottom_border', 0 ) );
-		// }
+		// Header Widgets 2 Color.
+		$header_widget2_text_color       = esc_html( get_theme_mod( 'responsive_header_widget2_text_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_text' ) ) );
+		$header_widget2_background_color = esc_html( get_theme_mod( 'responsive_header_widget2_background_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_background' ) ) );
+		$header_widget2_border_color     = esc_html( get_theme_mod( 'responsive_header_widget2_border_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_border' ) ) );
+		$header_widget2_link_color       = esc_html( get_theme_mod( 'responsive_header_widget2_link_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_link' ) ) );
+		$header_widget2_link_hover_color = esc_html( get_theme_mod( 'responsive_header_widget2_link_hover_color', Responsive\Core\get_responsive_customizer_defaults( 'header_widget2_link_hover' ) ) );
+
 
 		$off_canvas_menu_link_default = esc_html( get_theme_mod( 'responsive_header_off_canvas_menu_link_default_color', Responsive\Core\get_responsive_customizer_defaults( 'header_menu_link' )  ) );
 		$off_canvas_menu_link_hover = esc_html( get_theme_mod( 'responsive_header_off_canvas_menu_link_hover_color', Responsive\Core\get_responsive_customizer_defaults( 'header_menu_link_hover' ) ) );
@@ -4894,6 +4933,35 @@ function responsive_customizer_styles() {
 			.header-widgets a:focus,
 			.header-widgets a:hover {
 				color: {$header_widget_link_hover_color};
+			}
+		";
+	}
+
+	if(Responsive\Core\responsive_check_element_present_in_hfb('header_widgets2', 'header'))
+	{
+		$custom_css .= "
+			.header-widgets2 {
+				background-color: {$header_widget2_background_color};
+				color: {$header_widget2_text_color};
+				border-color: {$header_widget2_border_color};
+			}
+			.header-widgets2 h1,
+			.header-widgets2 h2,
+			.header-widgets2 h3,
+			.header-widgets2 h4,
+			.header-widgets2 h5,
+			.header-widgets2 h6 {
+				color:{$header_widget2_text_color};
+			}
+			.header-widgets2 .widget-title h4 {
+				color: {$header_widget2_text_color};
+			}
+			.header-widgets2 a {
+				color: {$header_widget2_link_color};
+			}
+			.header-widgets2 a:focus,
+			.header-widgets2 a:hover {
+				color: {$header_widget2_link_hover_color};
 			}
 		";
 	}

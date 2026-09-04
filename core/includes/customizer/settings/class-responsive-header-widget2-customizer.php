@@ -78,7 +78,7 @@ if ( ! class_exists( 'Responsive_Header_Widget2_Customizer' ) ) :
 			 * Header Widgets.
 			 */
 			$header_widget2_typography_label = esc_html__( 'Font', 'responsive' );
-			responsive_typography_group_control( $wp_customize, 'header_widget2_typography_group', $header_widget2_typography_label, 'responsive_header_widget2', 150, 'header_widget2_typography' );
+			responsive_typography_group_control( $wp_customize, 'header_widgets2_typography_group', $header_widget2_typography_label, 'responsive_header_widget2', 150, 'header_widgets2_typography' );
 
 		}
 	}

@@ -354,6 +354,43 @@
         } );
     } );
 
+    //Header Widget 2 section
+    //Update header widget text background color...
+    api( 'responsive_header_widget2_text_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.header-widgets2, .header-widgets2 h1, .header-widgets2 h2, .header-widgets2 h3, .header-widgets2 h4, .header-widgets2 h5, .header-widgets2 h6, .header-widgets2 .widget-title h4').css('color', newval );
+        } );
+    } );
+
+    //Update header widget background color...
+    api( 'responsive_header_widget2_background_color', function( value ) {
+        value.bind( function( newval ) {
+                $('.header-widgets2').css('background-color', newval );
+            
+        } );
+    } );
+
+    //Update header widget border color...
+    api( 'responsive_header_widget2_border_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.header-widgets2').css('border-color', newval );
+        } );
+    } );
+
+    //Update header widget link color...
+    api( 'responsive_header_widget2_link_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.header-widgets2 a').css('color', newval );
+        } );
+    } );
+
+    //Update header widget link hover color...
+    api( 'responsive_header_widget2_link_hover_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.header-widgets2 a:focus, .header-widgets2 a:hover').css('color', newval );
+        } );
+    } );
+
     // Mobile Header Widgets (apply styles within the mobile header widgets wrapper)
     // Update mobile header widget text color...
     api( 'responsive_mobile_header_widget_text_color', function( value ) {
@@ -387,6 +424,41 @@
     api( 'responsive_mobile_header_widget_link_hover_color', function( value ) {
         value.bind( function( newval ) {
             $('.mobile-header-widgets .mobile-header-widgets-wrapper a:focus, .header-widgets .mobile-header-widgets-wrapper a:hover').css('color', newval );
+        } );
+    } );
+        // Mobile Header Widgets 2 (apply styles within the mobile header widgets 2 wrapper)
+    // Update mobile header widget 2 text color...
+    api( 'responsive_mobile_header_widget2_text_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.mobile-header-widgets2 .mobile-header-widgets-wrapper, .mobile-header-widgets2 .mobile-header-widgets-wrapper h1, .mobile-header-widgets2 .mobile-header-widgets-wrapper h2, .mobile-header-widgets2 .mobile-header-widgets-wrapper h3, .mobile-header-widgets2 .mobile-header-widgets-wrapper h4, .mobile-header-widgets2 .mobile-header-widgets-wrapper h5, .mobile-header-widgets2 .mobile-header-widgets-wrapper h6, .mobile-header-widgets2 .mobile-header-widgets-wrapper .widget-title h4').css('color', newval );
+        } );
+    } );
+
+    // Update mobile header widget 2 background color...
+    api( 'responsive_mobile_header_widget2_background_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.mobile-header-widgets2').css('background-color', newval );
+        } );
+    } );
+
+    // Update mobile header widget 2 border color...
+    api( 'responsive_mobile_header_widget2_border_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.mobile-header-widgets2').css('border-color', newval );
+        } );
+    } );
+
+    // Update mobile header widget 2 link color...
+    api( 'responsive_mobile_header_widget2_link_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.mobile-header-widgets2 .mobile-header-widgets-wrapper a').css('color', newval );
+        } );
+    } );
+
+    // Update mobile header widget 2 link hover color...
+    api( 'responsive_mobile_header_widget2_link_hover_color', function( value ) {
+        value.bind( function( newval ) {
+            $('.mobile-header-widgets2 .mobile-header-widgets-wrapper a:focus, .mobile-header-widgets2 .mobile-header-widgets-wrapper a:hover').css('color', newval );
         } );
     } );
 
